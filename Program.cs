@@ -1,14 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using CompitionProj;
 
-using CompitionProj;
-
-
-Console.WriteLine("Hello, World!");
-
-Level.Instance.DisplayLevel();
-
-
-var t = new System.Timers.Timer() { Interval = 100 };
+var t = new System.Timers.Timer() { Interval = 100 }; //main game loop
 t.Elapsed += (s, e) =>
 {
 
@@ -18,11 +10,10 @@ t.Elapsed += (s, e) =>
     Level.Instance.DisplayLevel();
 };
 
-t.Start();
+t.Start(); //start the same loop
 
 
 while (true)
 {
-    Console.ReadKey(true);
-
+    Console.ReadKey(true);  //stops keypresses from being put into the console
 }

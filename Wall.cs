@@ -10,6 +10,10 @@ namespace CompitionProj
 {
     internal class Wall
     {
+
+        //This section of code was generated using ChatGPT
+        //-------------------------
+
         // Import the GetAsyncKeyState function from user32.dll
         [DllImport("user32.dll")]
         private static extern short GetAsyncKeyState(int vKey);
@@ -21,8 +25,13 @@ namespace CompitionProj
         private const int VK_I = 0x49;
         private const int VK_K = 0x4B;
 
+        //end of GPT code
+        //-------------------------
+
+        //mapping player inputs
         public int[] player1Keys = { VK_W, VK_S };
         public int[] player2Keys = { VK_I, VK_K };
+
 
         public int position = 2;
         public int score = 0;
