@@ -14,10 +14,7 @@ namespace CompitionProj
         [DllImport("user32.dll")]
         private static extern short GetAsyncKeyState(int vKey);
 
-        // Define virtual key codes, e.g., for the Space key
         private const int VK_SPACE = 0x20; // Virtual key code for the Space key
-        private const int VK_ESCAPE = 0x1B; // Virtual key code for the Escape key
-
 
         private const int VK_W = 0x57;
         private const int VK_S = 0x53;
@@ -39,9 +36,6 @@ namespace CompitionProj
             {
                 position++;
             }
-            else {
-                score++;
-            }
         }
         public void moveDown()
         {
@@ -49,10 +43,6 @@ namespace CompitionProj
             {
                 position--;
             }
-        }
-        public static void Update()
-        {
-
         }
 
         public void Input(bool player1)
@@ -65,6 +55,10 @@ namespace CompitionProj
             if ((GetAsyncKeyState(mykeys[1]) & 0x8000) != 0)
             {
                 moveDown();
+            }
+            if((GetAsyncKeyState(VK_SPACE) & 0x8000) != 0)
+            {
+                Ball.b.Moving = true;
             }
 
         }

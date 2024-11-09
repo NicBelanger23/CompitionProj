@@ -11,9 +11,10 @@ Level.Instance.DisplayLevel();
 var t = new System.Timers.Timer() { Interval = 100 };
 t.Elapsed += (s, e) =>
 {
-    Ball.b.Update();
+
     Wall.Player1.Input(true);
     Wall.Player2.Input(false);
+    Ball.b.Update();
     Level.Instance.DisplayLevel();
 };
 
